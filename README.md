@@ -1,12 +1,12 @@
-# Projeto Button Randomly
+# Button Randomly Project
 
-Este é um projeto simples que consiste em um botão que, ao ser clicado, se move do local inicial de forma aleatória dentro da página. O objetivo deste projeto é demonstrar o uso de JavaScript para manipular o DOM e criar eventos de clique.
+This is a simple project consisting of a button that, when clicked, moves randomly from its initial position within the page. The goal of this project is to demonstrate the use of JavaScript to manipulate the DOM and create click events.
 
-## Como executar
+## How to Run
 
-Para executar o projeto, basta abrir o arquivo `index.html` em um navegador web. Ao tentar clicar no botão "Não", ele será alterada aleatoriamente para um novo local e não vai ter opção a não ser em clicar em "Sim".
+To run the project, simply open the `index.html` file in a web browser. When trying to click the "No" button, it will randomly move to a new location, leaving you with no choice but to click "Yes".
 
-## Tecnologias utilizadas
+## Technologies Used
 
 - HTML5
 - CSS3

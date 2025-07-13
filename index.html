@@ -21,12 +21,12 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background: #279eee;
+            background: #1f2b72;
         }
 
         .wrapper {
             position: relative;
-            width: 800px;
+            width: 600px;
             height: 400px;
             background: #fff;
             border-radius: 20px;
@@ -40,14 +40,18 @@
             font-size: 7.5em;
             color: #1f2b72;
             border: 5px solid transparent;
-            outline: 3px solid #7d2ae8;
+            outline: 3px solid #1f2b72;
             border-radius: 50%;
         }
 
         h2 {
             font-size: 2.5em;
-            color: #7d2ae8;
+            color: #1f2b72;
             margin: 15px 0;
+        }
+        
+        .txt-group {
+            text-align: center;
         }
 
         .btn-group {
@@ -75,12 +79,16 @@
 
         button:nth-child(1) {
             margin-left: -200px;
-            background: #1f2b72;
+            background-color: #fff;
+            color: #1f2b72;
+            border: 2px solid #1f2b72;
         }
 
         button:nth-child(2) {
             margin-right: -200px;
-            color: #1f2b72;
+            background-color: #1f2b72;
+            color: #fff;
+            border: 2px solid #1f2b72;
         }
 
     </style>
@@ -89,39 +97,44 @@
 <body>
     <div class="wrapper">
         <i class="fa-solid fa-circle-question"></i>
-        <h2 class="question">If today were Friday, should we deploy?</h2>
+        <div id="txtGroup"class="txt-group">
+            <h2 class="question">If today were Friday, should we deploy?</h2>
+        </div>
         <div id="btnGroup"class="btn-group">
-            <button class="yes-btn" type="button" onclick="ocultarBtnGroup()">Yes</button>
-            <button class="no-btn">No</button>
+            <button class="yes-btn" type="button" onclick="hideBtnGroup()">Yes</button>
+            <button class="no-btn" type="button">No</button>
         </div>
     </div>
     <script>
             const wrapper = document.querySelector(".wrapper");
             const question = document.querySelector(".question");
-            const btnGroup = document.querySelector("btnGroup");
+            const btnGroup = document.querySelector("#btnGroup");
             const yesBtn = document.querySelector(".yes-btn");
             const noBtn = document.querySelector(".no-btn");
 
             const wrapperReact = wrapper.getBoundingClientRect();
-            const noBtnReact = noBtn.getBoundingClientRect();
+            const yesBtnReact = yesBtn.getBoundingClientRect();
 
+            noBtn.addEventListener("click", () => {
+                question.innerHTML = open("https://www.youtube.com/shorts/RmTNdjd2nQQ");
+            });
             yesBtn.addEventListener("click", () => {
-                question.innerHTML = open("https://www.youtube.com/watch?v=umDr0mPuyQc&ab_channel=RetroPep", "_blank");
+                question.innerHTML = open("https://www.youtube.com/watch?v=umDr0mPuyQc&ab_channel=RetroPep");
             });
 
-            function ocultarBtnGroup() {
+            function hideBtnGroup() {
                 document.querySelector("#btnGroup").style.display = "none";
             }
 
-            noBtn.addEventListener("mouseover", () => {
+            yesBtn.addEventListener("mouseover", () => {
                 const i =
-                    Math.floor(Math.random() * (wrapperReact.width - noBtnReact.width)) + 1;
+                    Math.floor(Math.random() * (wrapperReact.width - yesBtnReact.width)) + 1;
                 const j =
-                    Math.floor(Math.random() * (wrapperReact.height - noBtnReact.height)) +
+                    Math.floor(Math.random() * (wrapperReact.height - yesBtnReact.height)) +
                     1;
 
-                noBtn.style.left = i + "px";
-                noBtn.style.top = j + "px";
+                yesBtn.style.left = i + "px";
+                yesBtn.style.top = j + "px";
             });
     </script>
 </body>
